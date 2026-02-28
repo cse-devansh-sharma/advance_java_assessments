@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Movie</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+    <h1>Edit Movie</h1>
+
+    <form th:action="@{/movie/edit/{id}(id=${movie.id})}" th:object="${movie}" method="post">
+
+        <label>Title</label>
+        <input type="text" th:field="*{title}"/>
+
+        <label>Director</label>
+        <input type="text" th:field="*{director}"/>
+
+        <label>Genre</label>
+        <input type="text" th:field="*{genre}"/>
+
+        <label>Rating</label>
+        <input type="text" th:field="*{rating}"/>
+
+        <label>Release Year</label>
+        <input type="text" th:field="*{releaseYear}"/>
+
+        <button type="submit">Update Movie</button>
+        <a href="/movie/list">Cancel</a>
+
+    </form>
+
+</body>
+</html>
