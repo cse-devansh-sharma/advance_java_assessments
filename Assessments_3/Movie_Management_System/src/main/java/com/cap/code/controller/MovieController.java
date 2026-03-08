@@ -26,7 +26,6 @@ public class MovieController {
 	@GetMapping("/list")
 	public ModelAndView getAllMovies() {
 	    List<Movie> movies = movieService.getAllMovies();
-
 	    ModelAndView mv = new ModelAndView();
 	    mv.addObject("movies", movies);
 	    mv.setViewName("movies");
@@ -43,7 +42,7 @@ public class MovieController {
 	@PostMapping("/create")
 	public String saveMovie(@ModelAttribute Movie movie) {
 	    movieService.saveMovie(movie);
-	    return "redirect:/movie/list";  // fixed
+	    return "redirect:/movie/list";  
 	}
 	
 	@GetMapping("/edit/{id}")
