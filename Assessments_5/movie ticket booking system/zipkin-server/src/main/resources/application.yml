@@ -1,0 +1,20 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: zipkin-server
+
+# Zipkin specific config
+zipkin:
+  self-tracing:
+    enabled: false  # Don't trace Zipkin itself
+  collector:
+    http:
+      enabled: true  # Accept spans via HTTP (how our services send data)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
